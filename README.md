@@ -45,9 +45,9 @@ script         | description
 >✌⊂(✰‿✰)つ✌
 
 ### Ideas for contibution
->Allow % width values
->Update docs with how to write custom themes
->Add hand movement animation
+- Allow % width values
+- Update docs with how to write custom themes
+- Add hand movement animation
 
 ## License
 [MIT](http://isekivacenz.mit-license.org/)
