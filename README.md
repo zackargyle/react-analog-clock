@@ -1,6 +1,6 @@
 # \<AnalogClock /\>
 
-AnalogClock is a themable clock component. It provides an easy way of adding a clock to your application. The clock is fully responsive based on the `width` prop you pass in (% or px).
+AnalogClock is a themable clock component. It provides an easy way of adding a clock to your application. The clock is fully responsive based on the `width` prop you pass in.
 
 ```
 npm install --save react-analog-clock
@@ -43,6 +43,11 @@ script         | description
 ### Patrons
 >Be the first to contribute!
 >✌⊂(✰‿✰)つ✌
+
+### Ideas for contibution
+>Allow % width values
+>Update docs with how to write custom themes
+>Add hand movement animation
 
 ## License
 [MIT](http://isekivacenz.mit-license.org/)
