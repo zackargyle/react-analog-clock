@@ -8,7 +8,7 @@ module.exports = {
         __dirname + '/index.js'
     ],
     output: {
-        filename: 'react-sexy-clock.js',
+        filename: 'react-analog-clock.js',
         path: path.join(__dirname, 'dist'),
         publicPath: '/dist/'
     },
