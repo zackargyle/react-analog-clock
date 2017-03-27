@@ -20,16 +20,6 @@ export default class AnalogClock extends Component {
         this.styles = cssTransform(Styles, props);
     }
 
-    initializeTime(gmtOffset) {
-        const now = new Date();
-        if (gmtOffset != null && gmtOffset != '' && gmtOffset != 'undefined') {
-            const offsetNow = new Date(now.valueOf() + (parseFloat(gmtOffset) * 1000 * 60 * 60));
-            return [offsetNow.getUTCHours(), offsetNow.getUTCMinutes(), offsetNow.getUTCSeconds()];
-        } else {
-            return [now.getHours(), now.getMinutes(), now.getSeconds()];
-        }
-    }
-
     componentDidMount() {
         this.interval = setInterval(() => {
             this.setState(updateTime(this.state));
@@ -42,6 +32,16 @@ export default class AnalogClock extends Component {
 
     componentWillUnmount() {
         clearInterval(this.interval);
+    }
+
+    initializeTime(gmtOffset) {
+        const now = new Date();
+        if (gmtOffset && gmtOffset !== 'undefined') {
+            const offsetNow = new Date(now.valueOf() + (parseFloat(gmtOffset) * 1000 * 60 * 60));
+            return [offsetNow.getUTCHours(), offsetNow.getUTCMinutes(), offsetNow.getUTCSeconds()];
+        } else {
+            return [now.getHours(), now.getMinutes(), now.getSeconds()];
+        }
     }
 
     render() {
