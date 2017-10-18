@@ -25,7 +25,7 @@ prop    | default
 `gmtOffset` (optional)| offset of `new Date()` _(e.g. '-5.5')_
 
 ### Themes
-Theme      | Description 
+Theme      | Description
 ---------- | -----------
 `dark`     | Black base, black border
 `light`    | White base, gray border
@@ -45,8 +45,9 @@ script         | description
 >Be the first to contribute!
 >✌⊂(✰‿✰)つ✌
 
-### Ideas for contibution
+### Ideas for contribution
 - Allow % width values
+- Add Timezone (Winter/Summertime) Support
 - Update docs with how to write custom themes
 - Add hand movement animation
 

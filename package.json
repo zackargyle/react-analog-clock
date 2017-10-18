@@ -1,6 +1,6 @@
 {
   "name": "react-analog-clock",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "A themable analog clock component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -26,8 +26,9 @@
     "url": "https://github.com/zackargyle/react-analog-clock.git"
   },
   "peerDependencies": {
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
