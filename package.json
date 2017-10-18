@@ -1,6 +1,6 @@
 {
   "name": "react-analog-clock",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "A themable analog clock component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
