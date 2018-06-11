@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function renderNotches({ smallTick, largeTick }) {
+function renderNotches({ smallTick, largeTick }, showSmallTicks) {
     const notches = [];
     for (let i = 0; i < 60; i++) {
         let style = Object.assign({}, i % 5 === 0 ? largeTick : smallTick, {
             transform: `translateX(-50%) translateY(-100%) rotate(${i * 6}deg)`,
         });
+        if (i % 5 !== 0 && !showSmallTicks) continue;
         notches.push(<span key={i} style={style} />);
     }
     return notches;
 }
 
-export default function AnalogClockLayout({ hour, minutes, seconds, styles }) {
+export default function AnalogClockLayout({ hour, minutes, seconds, styles, showSmallTicks }) {
     // +1 to center align
     const secondStyle = Object.assign({}, styles.second, {
         transform: `translateX(-50%) translateY(-100%) rotate(${seconds * 6 + 1}deg)`,
@@ -31,7 +32,7 @@ export default function AnalogClockLayout({ hour, minutes, seconds, styles }) {
             <div data-testid="minutes" style={minuteStyle}></div>
             <div data-testid="hour" style={hourStyle}></div>
             <div style={styles.center}></div>
-            {renderNotches(styles)}
+            {renderNotches(styles, showSmallTicks)}
         </div>
     );
 }
@@ -45,4 +46,5 @@ AnalogClockLayout.propTypes = {
         minute: PropTypes.object.isRequired,
         hour: PropTypes.object.isRequired,
     }).isRequired,
+    showSmallTicks: PropTypes.bool.isRequired,
 };

@@ -1,5 +1,6 @@
 import { assert } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 
 import AnalogClockLayout from '../src/AnalogClockLayout';
@@ -7,11 +8,14 @@ import Styles from '../src/styles';
 import { cssTransform } from '../src/util';
 import { dark as theme } from '../src/themes';
 
+configure({ adapter: new Adapter() });
+
 const width = 200;
 const styles = cssTransform(Styles, { width, theme });
 const props = {
     seconds: 20, minutes: 20, hour: 6,
     styles,
+    showSmallTicks: true,
 };
 
 describe('AnalogClockLayout', () => {
@@ -23,6 +27,13 @@ describe('AnalogClockLayout', () => {
 
     it('should have 60 rotated notches', () => {
         const expected = 60;
+        const numNotches = wrapper.find('span').length;
+        assert.strictEqual(numNotches, expected);
+    });
+
+    it('should have 12 rotated notches when small ticks are hidden', () => {
+        wrapper = shallow(<AnalogClockLayout {...props} showSmallTicks={false} />);
+        const expected = 12;
         const numNotches = wrapper.find('span').length;
         assert.strictEqual(numNotches, expected);
     });

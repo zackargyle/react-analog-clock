@@ -1,10 +1,13 @@
 import { assert } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 
 import AnalogClock from '../src/AnalogClock';
 import AnalogClockLayout from '../src/AnalogClockLayout';
 import { dark, light } from '../src/themes';
+
+configure({ adapter: new Adapter(), disableLifecycleMethods: true });
 
 describe('AnalogClock', () => {
     let wrapper;
@@ -14,9 +17,10 @@ describe('AnalogClock', () => {
     });
 
     it('should have prop defaults', () => {
-        const { theme, width } = wrapper.instance().props;
+        const { theme, width, showSmallTicks } = wrapper.instance().props;
         assert.strictEqual(theme, dark);
         assert.strictEqual(width, 400);
+        assert.strictEqual(showSmallTicks, true);
     });
 
     it('should cache calculated styles', () => {
@@ -51,6 +55,13 @@ describe('AnalogClock', () => {
         assert.isDefined(layout.prop('minutes'));
         assert.isDefined(layout.prop('hour'));
         assert.strictEqual(layout.prop('styles'), styles);
+    });
+
+    it('should pass "showSmallTicks" prop to layout component', () => {
+        const showSmallTicks = wrapper.instance().props.showSmallTicks;
+        const layout = wrapper.find(AnalogClockLayout);
+        assert.isDefined(showSmallTicks);
+        assert.strictEqual(showSmallTicks, layout.prop('showSmallTicks'));
     });
 
 });

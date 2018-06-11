@@ -23,6 +23,7 @@ prop    | default
 `width` | 400px
 `theme` | Themes.dark
 `gmtOffset` (optional)| offset of `new Date()` _(e.g. '-5.5')_
+`showSmallTicks` (optional) | true
 
 ### Themes
 Theme      | Description

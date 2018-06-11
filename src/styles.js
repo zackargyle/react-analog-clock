@@ -1,3 +1,8 @@
+const withDefault = (value, defaultValue) => {
+    if (value === null || value === undefined) return defaultValue;
+    return value;
+};
+
 const AnalogBase = {
     background: s => s.theme.background,
     backgroundSize: 'cover',
@@ -30,19 +35,19 @@ const AnalogHand = {
 const AnalogSecondHand = Object.assign({}, AnalogHand, {
     background: s => s.theme.seconds,
     height: s => Math.floor(s.width * 0.425),
-    width: 3,
+    width: s => withDefault(s.theme.secondHandWidth, 3),
 });
 
 const AnalogMinuteHand = Object.assign({}, AnalogHand, {
     background: s => s.theme.minutes,
     height: s => Math.floor(s.width * 0.35),
-    width: 6,
+    width: s => withDefault(s.theme.minuteHandWidth, 6),
 });
 
 const AnalogHourHand = Object.assign({}, AnalogHand, {
     background: s => s.theme.hour,
     height: s => Math.floor(s.width * 0.2),
-    width: 8,
+    width: s => withDefault(s.theme.hourHandWidth, 8),
 });
 
 const AnalogSmallTick = {
@@ -52,7 +57,7 @@ const AnalogSmallTick = {
     position: 'absolute',
     top: 6,
     transformOrigin: s => `0 ${Math.ceil(s.width / 2)}px`,
-    width: 2,
+    width: s => withDefault(s.theme.smallTickWidth, 2),
 };
 
 const AnalogLargeTick = {
@@ -62,7 +67,7 @@ const AnalogLargeTick = {
     position: 'absolute',
     top: 10,
     transformOrigin: s => `0 ${Math.ceil(s.width / 2)}px`,
-    width: 4,
+    width: s => withDefault(s.theme.largeTickWidth, 4),
 };
 
 export default {

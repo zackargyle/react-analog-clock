@@ -46,7 +46,7 @@ export default class AnalogClock extends Component {
     }
 
     render() {
-        return <AnalogClockLayout {...this.state} styles={this.styles} />;
+        return <AnalogClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />;
     }
 }
 
@@ -62,9 +62,11 @@ AnalogClock.propTypes = {
     }),
     width: PropTypes.number,
     gmtOffset: PropTypes.string,
+    showSmallTicks: PropTypes.bool,
 };
 
 AnalogClock.defaultProps = {
     theme: dark,
     width: 400,
+    showSmallTicks: true,
 };

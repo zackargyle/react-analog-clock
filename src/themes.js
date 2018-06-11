@@ -6,6 +6,11 @@ export const light = {
     minutes: '#ccc',
     hour: '#000',
     tick: '#000',
+    smallTickWidth: 2,
+    largeTickWidth: 4,
+    secondHandWidth: 3,
+    minuteHandWidth: 6,
+    hourHandWidth: 8,
 };
 
 export const dark = {
@@ -16,6 +21,11 @@ export const dark = {
     minutes: '#ccc',
     hour: '#fff',
     tick: '#fff',
+    smallTickWidth: 2,
+    largeTickWidth: 4,
+    secondHandWidth: 3,
+    minuteHandWidth: 6,
+    hourHandWidth: 8,
 };
 
 export const aqua = {
@@ -26,6 +36,11 @@ export const aqua = {
     minutes: '#9c9c9c',
     hour: '#000',
     tick: '#000',
+    smallTickWidth: 2,
+    largeTickWidth: 4,
+    secondHandWidth: 3,
+    minuteHandWidth: 6,
+    hourHandWidth: 8,
 };
 
 export const lime = {
@@ -36,6 +51,11 @@ export const lime = {
     minutes: '#ccc',
     hour: '#fff',
     tick: '#fff',
+    smallTickWidth: 2,
+    largeTickWidth: 4,
+    secondHandWidth: 3,
+    minuteHandWidth: 6,
+    hourHandWidth: 8,
 };
 
 export const sherbert = {
@@ -46,6 +66,11 @@ export const sherbert = {
     minutes: '#ccc',
     hour: '#fff',
     tick: '#fff',
+    smallTickWidth: 2,
+    largeTickWidth: 4,
+    secondHandWidth: 3,
+    minuteHandWidth: 6,
+    hourHandWidth: 8,
 };
 
 export const navy = {
@@ -56,4 +81,9 @@ export const navy = {
     minutes: '#ccc',
     hour: '#fff',
     tick: '#fff',
+    smallTickWidth: 2,
+    largeTickWidth: 4,
+    secondHandWidth: 3,
+    minuteHandWidth: 6,
+    hourHandWidth: 8,
 };
